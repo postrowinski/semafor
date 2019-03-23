@@ -1,6 +1,7 @@
 @import "scss/.variables";
 @import "scss/.placeholdes";
 @import "scss/.breakpoints";
+@import "scss/.animations";
 
 html, body {
     @include sm {
@@ -59,12 +60,18 @@ html, body {
     &.active {
         background: green;
     }
+    &.blinking {
+        @include animation(greenAnimation);
+    }
 }
 
 .top-center-light {
     @extend %ligth;
     &.active {
         background: orange;
+    }
+    &.blinking {
+        @include animation(orangeAnimation);
     }
 }
 
@@ -73,6 +80,9 @@ html, body {
     &.active {
         background: red;
     }
+    &.blinking {
+        @include animation(redAnimation);
+    }
 }
 
 .bottom-center-light {
@@ -80,12 +90,18 @@ html, body {
     &.active {
         background: orange;
     }
+    &.blinking {
+        @include animation(orangeAnimation);
+    }
 }
 
 .bottom-light {
     @extend %ligth;
     &.active {
         background: white;
+    }
+    &.blinking {
+        @include animation(whiteAnimation);
     }
 }
 
@@ -120,7 +136,7 @@ html, body {
     justify-content: center;
     top: 30.6rem;
     width: 3rem;
-    left: 1.4rem;
+    left: 1.5rem;
     height: 11rem;
     border: solid 0.1rem $black-color;
 }
@@ -152,5 +168,4 @@ html, body {
             background: white;
         }
     }
-    
 }

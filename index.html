@@ -22,11 +22,36 @@
             </div>
             <div class="semaphore">
                 <div class='ligths-container'>
-                    <div class="top-light" :class="{active: activeSignal.topLigth.active}"></div>
-                    <div class="top-center-light" :class="{active: activeSignal.topCenterLigth.active}"></div>
-                    <div class="center-light" :class="{active: activeSignal.centerLigth.active}"></div>
-                    <div class="bottom-center-light" :class="{active: activeSignal.bottomCenterLigth.active}"></div>
-                    <div class="bottom-light" :class="{active: activeSignal.bottomLigth.active}"></div>
+                    <div class="top-light" :class=
+                        "{
+                            active: activeSignal.topLigth.active,
+                            blinking: activeSignal.topLigth.blinking
+                        }">
+                    </div>
+                    <div class="top-center-light" :class=
+                        "{
+                            active: activeSignal.topCenterLigth.active,
+                            blinking: activeSignal.topCenterLigth.blinking
+                        }">
+                    </div>
+                    <div class="center-light" :class=
+                        "{
+                            active: activeSignal.centerLigth.active,
+                            blinking: activeSignal.centerLigth.blinking
+                        }">
+                    </div>
+                    <div class="bottom-center-light" :class=
+                        "{
+                            active: activeSignal.bottomCenterLigth.active,
+                            blinking: activeSignal.bottomCenterLigth.blinking
+                        }">
+                    </div>
+                    <div class="bottom-light" :class=
+                        "{
+                            active: activeSignal.bottomLigth.active,
+                            blinking: activeSignal.bottomLigth.blinking
+                        }">
+                    </div>
                 </div>
             </div>
             <div class="top-leg"></div>

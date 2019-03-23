@@ -14,7 +14,6 @@ const app = new Vue({
             } else {
                 this.activeSignal = null;
             }
-            console.log(this.activeSignal);
         }
     }
 });
