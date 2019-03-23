@@ -1,8 +1,11 @@
 @import "scss/.variables";
 @import "scss/.placeholdes";
+@import "scss/.breakpoints";
 
 html, body {
-    font-size: 16px;
+    @include sm {
+        font-size: 16px;
+    }
 }
 
 #app {
@@ -20,12 +23,15 @@ html, body {
 
 .top-plate {
     @extend %plate;
-    color: green;
+    color: $black-color;
     font-size: 3.6rem;
     left: 0.75rem;
     width: 4.5rem;
     height: 4.2rem;
     background: $black-color;
+    &.active {
+        color: green;
+    }
 }
 
 .semaphore {
@@ -50,27 +56,37 @@ html, body {
 
 .top-light {
     @extend %ligth;
-    background: green;
+    &.active {
+        background: green;
+    }
 }
 
 .top-center-light {
     @extend %ligth;
-    background: orange;
+    &.active {
+        background: orange;
+    }
 }
 
 .center-light {
     @extend %ligth;
-    background: red;
+    &.active {
+        background: red;
+    }
 }
 
 .bottom-center-light {
     @extend %ligth;
-    background: orange;
+    &.active {
+        background: orange;
+    }
 }
-//TODO: przeniesc do active colory
+
 .bottom-light {
     @extend %ligth;
-   background: white;
+    &.active {
+        background: white;
+    }
 }
 
 .top-leg {
@@ -85,12 +101,15 @@ html, body {
 
 .bottom-plate {
     @extend %plate;
-    color: orange;
+    color: $black-color;
     font-size: 5rem;
     top: 24.6rem;
     width: 6rem;
     height: 6rem;
     background: $black-color;
+    &.active {
+        color: orange;
+    }
 }
 
 .icons-container {
@@ -111,21 +130,27 @@ html, body {
     font-size: 3rem;
     flex: 1;
     background: $black-color;
-    color: white;
+    color: $black-color;
     display: flex;
     border-bottom: solid 0.1rem $black-color;
     width: 100%;
     justify-content: center;
     align-items: center;
+    .slash-icon {
+        background: $black-color;
+        width: 0.6rem;
+        height: 2.6rem;
+        transform: rotate(-45deg);
+        border: solid 0.1rem $black-color;
+    }
     &:last-of-type {
         border-bottom-color: transparent;
     }
-}
-
-.slash-icon {
-    background: white;
-    width: 0.6rem;
-    height: 2.6rem;
-    transform: rotate(-45deg);
-    border: solid 0.1rem $black-color;
+    &.active {
+        color: white;
+        .slash-icon {
+            background: white;
+        }
+    }
+    
 }

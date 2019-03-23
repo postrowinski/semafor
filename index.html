@@ -8,7 +8,7 @@
     <meta name="description" content="">
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
 
-    <title>Starting grunt template</title>
+    <title>Sygnalizacja semaforu</title>
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
     <link rel="stylesheet" href="style/style.css">
@@ -16,38 +16,41 @@
 
 <body>
     <div id="app">
-        <div id="absolute-container">
-            <div class="top-plate">
+        <div v-if="activeSignal" id="absolute-container">
+            <div class="top-plate" :class="{active: activeSignal.topPlateActive}">
                 12
             </div>
             <div class="semaphore">
                 <div class='ligths-container'>
-                    <div class="top-light"></div>
-                    <div class="top-center-light"></div>
-                    <div class="center-light"></div>
-                    <div class="bottom-center-light"></div>
-                    <div class="bottom-light"></div>
+                    <div class="top-light" :class="{active: activeSignal.topLigth.active}"></div>
+                    <div class="top-center-light" :class="{active: activeSignal.topCenterLigth.active}"></div>
+                    <div class="center-light" :class="{active: activeSignal.centerLigth.active}"></div>
+                    <div class="bottom-center-light" :class="{active: activeSignal.bottomCenterLigth.active}"></div>
+                    <div class="bottom-light" :class="{active: activeSignal.bottomLigth.active}"></div>
                 </div>
             </div>
             <div class="top-leg"></div>
-            <div class="bottom-plate">12</div>
+            <div class="bottom-plate" :class="{active: activeSignal.bottomPlateActive}">12</div>
             <div class="icons-container">
-                <div class='top-icon icon'>
+                <div class='top-icon icon' :class="{active: activeSignal.topIconActive}">
                     <div class="slash-icon"></div>
                 </div>
-                <div class='center-icon icon'>
+                <div class='center-icon icon' :class="{active: activeSignal.centerIconActive}">
                     <i class="fas fa-long-arrow-alt-down"></i>
                     <i class="fas fa-long-arrow-alt-down"></i>
                 </div>
-                <div class='bottom-icon icon'>
+                <div class='bottom-icon icon' :class="{active: activeSignal.bottomIconActive}">
                     <i class="fas fa-long-arrow-alt-down"></i>
                 </div>
             </div>
         </div>
+        <v-select label="Wybór sygnalizacji" v-model="selected" :options="signals" v-on:change='onSelectChange'></v-select>
     </div>
-    <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script> -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/vue@2.6.9/dist/vue.js"></script>
+    <script src="https://unpkg.com/vue-select@latest"></script>
+    <script src="js/data.js"></script>
     <script src="js/script.js"></script>
 </body>
 
