@@ -118,6 +118,7 @@ const signals = [
         topIconActive: true,
         centerIconActive: true,
         bottomIconActive: true,
+        oldBottomPlateActive: { greenLine: 'green', orangeLine: 'orange' }
     },
     { 
         id: 'S7', 

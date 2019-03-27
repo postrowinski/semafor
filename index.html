@@ -17,7 +17,7 @@
 <body>
     <div id="app">
         <div v-if="activeSignal" id="absolute-container">
-            <div class="top-plate" :class="{active: activeSignal.topPlateActive}">
+            <div v-if='!activeSignal.oldBottomPlateActive' class="top-plate" :class="{active: activeSignal.topPlateActive}">
                 12
             </div>
             <div class="semaphore">
@@ -55,7 +55,20 @@
                 </div>
             </div>
             <div class="top-leg"></div>
-            <div class="bottom-plate" :class="{active: activeSignal.bottomPlateActive}">12</div>
+            <div v-if="activeSignal.oldBottomPlateActive" class="bottom-plate">
+                <div class='plate-lines' :style="{color: activeSignal.oldBottomPlateActive.greenLine}">
+                    <div class='line line-green'></div>
+                    <div class='line line-green'></div>
+                    <div class='line line-green'></div>
+                </div>
+                <div class='plate-lines' :style="{color: activeSignal.oldBottomPlateActive.orangeLine}" >
+                    <div class='line line-orange'></div>
+                    <div class='line line-orange'></div>
+                    <div class='line line-orange'></div>
+                </div>
+                <div class='plate-lines'></div>
+            </div>
+            <div v-else class="bottom-plate" :class="{active: activeSignal.bottomPlateActive}">12</div>
             <div class="icons-container">
                 <div class='top-icon icon' :class="{active: activeSignal.topIconActive}">
                     <div class="slash-icon"></div>
