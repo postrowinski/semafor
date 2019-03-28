@@ -118,7 +118,6 @@ const signals = [
         topIconActive: true,
         centerIconActive: true,
         bottomIconActive: true,
-        oldBottomPlateActive: { greenLine: 'green', orangeLine: 'orange' }
     },
     { 
         id: 'S7', 
@@ -132,6 +131,7 @@ const signals = [
         topIconActive: false,
         centerIconActive: false,
         bottomIconActive: false,
+        oldBottomPlateActive: { greenLine: true }
     },
     { 
         id: 'S7a', 
@@ -158,12 +158,13 @@ const signals = [
         topIconActive: false,
         centerIconActive: false,
         bottomIconActive: false,
+        oldBottomPlateActive: { greenLine: true }
     },
     { 
         id: 'S8a', 
         topPlateActive: false, 
         topLigth: null,
-        topCenterLigth: active,
+        topCenterLigth: blinking,
         centerLigth: null,
         bottomCenterLigth: active,
         bottomLigth: null,
@@ -178,9 +179,22 @@ const signals = [
         topLigth: null,
         topCenterLigth: blinking,
         centerLigth: null,
-        bottomCenterLigth: blinking,
+        bottomCenterLigth: active,
         bottomLigth: null,
         bottomPlateActive: true,
+        topIconActive: true,
+        centerIconActive: true,
+        bottomIconActive: true,
+    },
+    { 
+        id: 'S9', 
+        topPlateActive: false, 
+        topLigth: null,
+        topCenterLigth: active,
+        centerLigth: null,
+        bottomCenterLigth: active,
+        bottomLigth: null,
+        bottomPlateActive: null,
         topIconActive: true,
         centerIconActive: true,
         bottomIconActive: true,
@@ -223,11 +237,12 @@ const signals = [
         topIconActive: false,
         centerIconActive: false,
         bottomIconActive: false,
+        oldBottomPlateActive: { orangeLine: true }
     },
     { 
         id: 'S11', 
         topPlateActive: false, 
-        topLigth: active,
+        topLigth: blinking,
         topCenterLigth: null,
         centerLigth: null,
         bottomCenterLigth: active,
@@ -249,6 +264,7 @@ const signals = [
         topIconActive: false,
         centerIconActive: false,
         bottomIconActive: false,
+        oldBottomPlateActive: { orangeLine: true }
     },
     { 
         id: 'S12', 
@@ -267,7 +283,7 @@ const signals = [
         id: 'S12a', 
         topPlateActive: false, 
         topLigth: null,
-        topCenterLigth: active,
+        topCenterLigth: blinking,
         centerLigth: null,
         bottomCenterLigth: active,
         bottomLigth: null,
@@ -275,6 +291,7 @@ const signals = [
         topIconActive: false,
         centerIconActive: false,
         bottomIconActive: false,
+        oldBottomPlateActive: { orangeLine: true }
     },
     { 
         id: 'S12b', 
@@ -314,5 +331,6 @@ const signals = [
         topIconActive: false,
         centerIconActive: false,
         bottomIconActive: false,
+        oldBottomPlateActive: { orangeLine: true }
     },
 ];

@@ -56,15 +56,15 @@
             </div>
             <div class="top-leg"></div>
             <div v-if="activeSignal.oldBottomPlateActive" class="bottom-plate">
-                <div class='plate-lines' :style="{color: activeSignal.oldBottomPlateActive.greenLine}">
-                    <div class='line line-green'></div>
-                    <div class='line line-green'></div>
-                    <div class='line line-green'></div>
+                <div class='plate-lines' :class="{greenLinesActive: activeSignal.oldBottomPlateActive.greenLine}">
+                    <div class='line'></div>
+                    <div class='line'></div>
+                    <div class='line'></div>
                 </div>
-                <div class='plate-lines' :style="{color: activeSignal.oldBottomPlateActive.orangeLine}" >
-                    <div class='line line-orange'></div>
-                    <div class='line line-orange'></div>
-                    <div class='line line-orange'></div>
+                <div class='plate-lines' :class="{orangeLinesActive: activeSignal.oldBottomPlateActive.orangeLine}">
+                    <div class='line'></div>
+                    <div class='line'></div>
+                    <div class='line'></div>
                 </div>
                 <div class='plate-lines'></div>
             </div>

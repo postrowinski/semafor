@@ -139,11 +139,15 @@ html, body {
         width: 1.2rem;
         height: 0.3rem;
     }
-    .line-green {
-        background: green;
+    &.greenLinesActive {
+        .line {
+            background: green;
+        }
     }
-    .line-orange {
-        background: orange;
+    &.orangeLinesActive {
+        .line {
+            background: orange
+        }
     }
 }
 
