@@ -71,7 +71,7 @@ const signals = [
         id: 'S4a', 
         topPlateActive: true, 
         topLigth: null,
-        topCenterLigth: active,
+        topCenterLigth: blinking,
         centerLigth: null,
         bottomCenterLigth: null,
         bottomLigth: null,
