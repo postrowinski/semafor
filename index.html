@@ -54,7 +54,6 @@
                     </div>
                 </div>
             </div>
-            <div class="top-leg"></div>
             <div v-if="activeSignal.oldBottomPlateActive" class="bottom-plate">
                 <div class='plate-lines' :class="{greenLinesActive: activeSignal.oldBottomPlateActive.greenLine}">
                     <div class='line'></div>
@@ -80,6 +79,11 @@
                 <div class='bottom-icon icon' :class="{active: activeSignal.bottomIconActive}">
                     <i class="fas fa-long-arrow-alt-down"></i>
                 </div>
+            </div>
+            <div class='bottom-leg'>
+                <div class='leg-red'></div>
+                <div></div>
+                <div class='leg-red'></div>
             </div>
         </div>
         <v-select label="Wybór sygnalizacji" v-model="selected" :options="signals" v-on:change='onSelectChange'></v-select>
